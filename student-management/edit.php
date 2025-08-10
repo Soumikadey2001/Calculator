@@ -6,9 +6,9 @@ if(!isset($_GET['id'])) {
     exit;
 }
 
-$id = (int) $_GET['id']; // int কাস্টিং করে basic সেফটি
+$id = (int) $_GET['id']; 
 
-// প্রথমে ডাটাবেজ থেকে ডাটা টেনে নিয়ে ফর্মে দেখাবো
+
 $student = $conn->query("SELECT * FROM students WHERE id = $id")->fetch_assoc();
 
 if (!$student) {
@@ -51,4 +51,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </div>
 </body>
+
 </html>
