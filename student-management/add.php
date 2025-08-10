@@ -2,13 +2,13 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // ইনপুট সুরক্ষিতভাবে নেয়া (basic escaping)
+    // take input
     $name = $conn->real_escape_string($_POST["name"]);
     $email = $conn->real_escape_string($_POST["email"]);
     $phone = $conn->real_escape_string($_POST["phone"]);
     $course = $conn->real_escape_string($_POST["course"]);
 
-    // ইনসার্ট করে
+    // insert
     $sql = "INSERT INTO students (name, email, phone, course) VALUES ('$name', '$email', '$phone', '$course')";
     if($conn->query($sql) === TRUE){
         header("Location: index.php");
@@ -38,4 +38,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </div>
 </body>
+
 </html>
